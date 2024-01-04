@@ -15,12 +15,12 @@ const Jwt = {
         let userId = null;
         let token = this.getAuthToken(authorisation);
         if (token) {
-            try {                
+            try {
                 let jwt_token = jwt.verify(token, process.env.JWT_SECRET);
                 if (jwt_token) {
                     userId = jwt_token.userId;
                 }
-            } catch (error) {                
+            } catch (error) {
                 throw error;
             }
         }
